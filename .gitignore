@@ -1,4 +1,4 @@
 /venv/*
-.gitattributes
-.gitignore
-.idea/*
+/.gitattributes
+/.gitignore
+/.idea
