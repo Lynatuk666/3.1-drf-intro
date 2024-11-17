@@ -9,6 +9,10 @@ from .serializers import MeasurementSerializer, SensorSerializer, SensorDetailSe
 
 
 class MeasurementsView(generics.ListCreateAPIView):
+    def get(self, request):
+        queryset = Measurement.objects.all()
+        serializer_class = MeasurementSerializer
+        return Response(serializer_class(queryset, many=True).data, status=200)
 
     def post(self, request):
         serializer = MeasurementSerializer(data=request.data)
